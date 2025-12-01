@@ -1,5 +1,4 @@
-```markdown
-# OpenMP Parallel Programming Demo
+# OpenMP Task
 
 ## Project Overview
 This project demonstrates parallel array processing using OpenMP tasks. The program counts positive elements in a double array, implementing both sequential and parallel (task-based) versions for comparison.
