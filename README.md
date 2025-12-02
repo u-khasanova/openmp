@@ -1,84 +1,83 @@
 # OpenMP Task
 
-## Project Overview
-This project demonstrates parallel array processing using OpenMP tasks. The program counts positive elements in a double array, implementing both sequential and parallel (task-based) versions for comparison.
+## Обзор проекта
+Этот проект демонстрирует параллельную обработку массивов с использованием задач OpenMP. Программа подсчитывает положительные элементы в массиве типа double, реализуя как последовательную, так и параллельную (на основе tasks) версии для сравнения.
 
-## Student Information
-- **Student:** Uma Khasanova  
-- **Student Number:** 61  
-- **Task:** Count positive elements in array (Task 2: `(61 % 4) + 1 = 2`)  
-- **Parallel Method:** OpenMP tasks (Method 1: `((61/4) % 5) + 1 = 1`)  
-- **Data Type:** double (Type 4: `(61/20) + 1 = 4`)
+## Информация о студенте
+- **Студент:** Ума Хасанова  
+- **Номер студента:** 61  
+- **Задача:** Подсчет положительных элементов в массиве (Задача 2: `(61 % 4) + 1 = 2`)  
+- **Метод параллелизации:** Задачи OpenMP (Метод 1: `((61/4) % 5) + 1 = 1`)  
+- **Тип данных:** double (Тип 4: `(61/20) + 1 = 4`)
 
-## Implementation Details
-- **Parallel Version:** Uses OpenMP tasks with dynamic work distribution
-- **Sequential Version:** Simple iterative approach for baseline comparison
-- **Thread Management:** Configurable thread count via command line
+## Детали реализации
+- **Параллельная версия:** Использует задачи OpenMP с динамическим распределением работы
+- **Последовательная версия:** Простой итеративный подход для базового сравнения
+- **Управление потоками:** Настраиваемое количество потоков через командную строку
 
-## Build Instructions
+## Инструкции по сборке
 ```bash
-# Build both versions
+# Собрать обе версии
 make all
 
-# Build and run parallel version (default: 4 threads, test array)
+# Собрать и запустить параллельную версию (по умолчанию: 4 потока, тестовый массив)
 make parallel
 
-# Build and run sequential version (default: test array)
+# Собрать и запустить последовательную версию (по умолчанию: тестовый массив)
 make sequential
 
-# Clean build files
+# Очистить файлы сборки
 make clean
 
-# Show help with examples
+# Показать справку с примерами
 make help
 ```
 
-## Usage Examples
+## Примеры использования
 ```bash
-# Parallel version with default test array (4 threads)
+# Параллельная версия с тестовым массивом по умолчанию (4 потока)
 make parallel
 
-# Parallel version with 2 threads
+# Параллельная версия с 2 потоками
 make parallel N=2
 
-# Parallel version with custom array
+# Параллельная версия с пользовательским массивом
 make parallel array='1.5 -2.0 3.0 -4.0 5.5'
 
-# Parallel version with custom array and 3 threads
+# Параллельная версия с пользовательским массивом и 3 потоками
 make parallel N=3 array='1.5 -2.0 3.0 -4.0 5.5'
 
-# Sequential version with default array
+# Последовательная версия с массивом по умолчанию
 make sequential
 
-# Sequential version with custom array
+# Последовательная версия с пользовательским массивом
 make sequential array='1.5 -2.0 3.0 -4.0 5.5'
 ```
 
-## Example Output
+## Пример вывода
 ```
-Student: Uma Khasanova
-Number: 61
-Task: Count positive elements in array
-Implementation: OpenMP tasks (parallel)
-Threads: 4
-Data type: double
-Array size: 20
-Using default test array
+Студент: Ума Хаасонова
+Номер: 61
+Задача: Подсчет положительных элементов в массиве
+Реализация: Задачи OpenMP (параллельная)
+Потоки: 4
+Тип данных: double
+Размер массива: 20
+Используется тестовый массив по умолчанию
 
-Array elements:
+Элементы массива:
 3.5 (+), -2.1, 0.0, 7.8 (+), -1.2, 
 4.2 (+), -3.0, 0.5 (+), -0.1, 2.3 (+),
 -5.6, 1.1 (+), -2.8, 3.3 (+), -4.4,
 6.6 (+), -7.7, 8.8 (+), -9.9, 10.0 (+)
 
-Result: 9 positive elements found
-Expected for default array: 9 positive elements
+Результат: найдено 9 положительных элементов
+Ожидается для массива по умолчанию: 9 положительных элементов
 
-Correct number of positive elements
+Правильное количество положительных элементов
 ```
 
-
-## Requirements
-- GCC/G++ compiler with OpenMP support
-- C++17 compatible standard library
-- Linux/Unix environment or MSYS2/MinGW on Windows
+## Требования
+- Компилятор GCC/G++ с поддержкой OpenMP
+- Совместимая со стандартом C++17 стандартная библиотека
+- Среда Linux/Unix или MSYS2/MinGW на Windows

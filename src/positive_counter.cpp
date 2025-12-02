@@ -94,28 +94,28 @@ int main(int argc, char* argv[]) {
     omp_set_num_threads(num_threads);
     #endif
     
-    std::cout << "Student: Uma Khasanova" << "\n";
-    std::cout << "Number: " << STUDENT_NUMBER << "\n";
-    std::cout << "Task: Count positive elements in array\n";
+    std::cout << "Студент: Ума Хасанова" << "\n";
+    std::cout << "Номер: " << STUDENT_NUMBER << "\n";
+    std::cout << "Задача: Подсчет положительных элементов в массиве\n";
     
     #ifdef _OPENMP
-    std::cout << "Implementation: OpenMP tasks (parallel)\n";
-    std::cout << "Threads: " << num_threads << "\n";
+    std::cout << "Реализация: OpenMP tasks (параллельная)\n";
+    std::cout << "Потоки: " << num_threads << "\n";
     #else
-    std::cout << "Implementation: Sequential\n";
+    std::cout << "Реализация: Последовательная\n";
     #endif
     
-    std::cout << "Data type: double\n";
-    std::cout << "Array size: " << array.size() << "\n";
+    std::cout << "Тип данных: double\n";
+    std::cout << "Размер массива: " << array.size() << "\n";
     
     if (use_default_array) {
-        std::cout << "Using default test array\n";
+        std::cout << "Используется тестовый массив по умолчанию\n";
     } else {
-        std::cout << "Using custom array\n";
+        std::cout << "Используется пользовательский массив\n";
     }
     
     
-    std::cout << "Array elements:\n";
+    std::cout << "Элементы массива:\n";
     for (size_t i = 0; i < array.size(); ++i) {
         std::cout << array[i];
         if (array[i] > 0.0) {
@@ -132,19 +132,19 @@ int main(int argc, char* argv[]) {
     
     size_t result = count_positives(array);
     
-    std::cout << "Result: " << result << " positive elements found\n";
+    std::cout << "Результат: найдено " << result << " положительных элементов\n";
     
     if (use_default_array && array.size() == DEFAULT_ARRAY.size()) {
         size_t expected_positives = 0;
         for (double val : DEFAULT_ARRAY) {
             if (val > 0.0) expected_positives++;
         }
-        std::cout << "Expected for default array: " << expected_positives << " positive elements\n";
+        std::cout << "Ожидается для массива по умолчанию: " << expected_positives << " положительных элементов\n";
         
         if (result == expected_positives) {
-            std::cout << "\nCorrect number of positive elements\n";
+            std::cout << "\nПравильное количество положительных элементов\n";
         } else {
-            std::cout << "\nWrong number of positive elements\n";
+            std::cout << "\nНеверное количество положительных элементов\n";
         }
     }
     
